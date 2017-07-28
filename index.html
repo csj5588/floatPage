@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    	<div class="main">
+    		<div class="contentBox">
+    			<img class="pic3" src="image/3.png" alt="">
+    			<img class="pic2" src="image/2.png" alt="">
+    			<img class="pic1" src="image/1.png" alt="">
+    			<p class="title"><a href="#">HIFOND迷你设备</a></p>
+    			<p class="tips"><i>承认吧：</i>其实你并不是什么都喜欢大的</p>
+    		</div>
+    	</div>
+    </body>
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script>
+    window.onload = function() {
+    	var contentWidth = document.querySelector('.contentBox').offsetWidth;
+    	var contentHeight = document.querySelector('.contentBox').offsetHeight;
+    	var contentLeft = document.querySelector('.contentBox').offsetLeft;
+    	var contentTop = document.querySelector('.contentBox').offsetTop;
+    	$('.contentBox').stop().mousemove(function(e){
+    		console.log(e);
+    		var widthFlg = 10 - ((e.pageX - contentLeft) / (contentWidth/2)) * 10;
+    		var heightFlg = 10 - ((e.pageY - contentTop) / (contentHeight/2)) * 10;
+    		if (e.pageX) {
+    			$('.contentBox').css({'transform': 'rotateY('+(-widthFlg)+'deg) rotateX('+(heightFlg)+'deg)'});
+	    		$('.contentBox .title').css('transform', 'translateX('+ (-widthFlg * 2) +'px) rotateY('+(-heightFlg)+'deg)');
+	    		$('.contentBox .tips').css('transform', 'translateX('+ (-widthFlg) +'px) rotateY('+(-heightFlg)+'deg)');
+	    		// 三张图片
+	    		$('.contentBox .pic3').css('transform', 'translateX('+ (-widthFlg * 0.3) +'px) translateY('+(-heightFlg * 0.3)+'px) translateZ(0)');
+	    		$('.contentBox .pic2').css('transform', 'translateX('+ (-widthFlg * 0.6) +'px) translateY('+(-heightFlg * 0.6)+'px) translateZ(0)');
+	    		$('.contentBox .pic1').css('transform', 'translateX('+ (-widthFlg * 0.9) +'px) translateY('+(-heightFlg * 0.9)+'px) translateZ(0)');
+    		}
+    		e.preventDefault();
+    	});
+    	$('.contentBox').mouseout(function(event) {
+    		$('.contentBox').css({'transform': 'rotateY(0deg) rotateX(0deg)'});
+    	});
+    }
+    </script>
+</html>

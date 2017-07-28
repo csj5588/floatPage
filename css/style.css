@@ -1,0 +1,106 @@
+html{
+	height: 100%;
+}
+a{
+  text-decoration:none; 
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.main{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+  perspective: 4000px;
+}
+.contentBox{
+	width: 86%;
+	margin-left: 7%;
+	height: 36vw;
+	margin-top: 5vw;
+  background: url(../image/bg.jpg) repeat;
+	border-radius: 15px;
+  transition: all 0.2s;
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .15);
+  overflow: hidden;
+}
+.contentBox p{
+  transition: all 0.2s;
+}
+.contentBox p a{
+	font-size: 5vw;
+	color:#228DFF;
+/*   text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF; */
+	line-height: 12vw;
+  position: absolute;
+  top: 8vw;
+  right: 6vw;
+}
+.contentBox p a:hover{
+	-webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+	-moz-animation: neon2 1.5s ease-in-out infinite alternate;
+	animation: neon2 1.5s ease-in-out infinite alternate;
+}
+.contentBox p a:hover{
+	color:#ffffff; 
+}
+.contentBox .tips{
+	font-size: 2vw;
+	color: #228DFF;
+	line-height: 2vw;
+  position: absolute;
+  top: 22vw;
+  right: 8vw;
+}
+.contentBox .tips i{
+	color: #FDA554;
+}
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #228DFF,
+               0 0 70px  #228DFF,
+               0 0 80px  #228DFF,
+               0 0 100px #228DFF,
+               0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #228DFF,
+               0 0 35px #228DFF,
+               0 0 40px #228DFF,
+               0 0 50px #228DFF,
+               0 0 75px #228DFF;
+  }
+}
+.contentBox img:nth-child(1){
+  width: 18%;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+.contentBox img:nth-child(2){
+  width: 41%;
+  position: absolute;
+  left: -20px;
+  bottom: -10px;
+}
+.contentBox img:nth-child(3){
+  width: 38.4%;
+  position: absolute;
+  left: 10%;
+  top: -10px;
+}
+
